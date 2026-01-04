@@ -11,5 +11,12 @@ test2
 
 for package in "${dotfiles[@]}";
 do
-  echo "found $package..."
+  if [ ! -d "$XDG_CONFIG_HOME"/"$package"]
+    echo "found $package..."
+    cp $package "$XDG_CONFIG_HOME"/"$package"
+  else
+    echo "$package already has a dotfile directory"
+  fi
 done
+
+return 0
