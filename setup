@@ -6,15 +6,13 @@ echo "setup script started!"
 
 dotfiles=(
 nvim
-test1
-test2
 )
 
 for package in "${dotfiles[@]}";
 do
   if [ ! -d "$XDG_CONFIG_HOME"/"$package" ]; then
     echo "found $package..."
-    cp $package "$XDG_CONFIG_HOME"/"$package"
+    cp -r $package "$XDG_CONFIG_HOME"/"$package"
   else
     echo "$package already has a dotfile directory"
   fi
