@@ -1,5 +1,6 @@
 #!/bin/bash
 export XDG_CONFIG_HOME="$HOME"/.config
+export TERM=xterm
 mkdir -p "$XDG_CONFIG_HOME"
 echo "setup script started!"
 
@@ -18,5 +19,3 @@ do
     echo "$package already has a dotfile directory"
   fi
 done
-
-return 0
