@@ -3,12 +3,13 @@ export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"
 echo "setup script started!"
 
-dotfiles={
+dotfiles=(
 nvim
-test
+test1
 test2
-}
+)
 
-for package in "${dotfiles[@]}": do
+for package in "${dotfiles[@]}";
+do
   echo "found $package..."
 done
