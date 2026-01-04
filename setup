@@ -12,7 +12,7 @@ test2
 
 for package in "${dotfiles[@]}";
 do
-  if [ ! -d "$XDG_CONFIG_HOME"/"$package"]; then
+  if [ ! -d "$XDG_CONFIG_HOME"/"$package" ]; then
     echo "found $package..."
     cp $package "$XDG_CONFIG_HOME"/"$package"
   else
