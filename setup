@@ -1,19 +1,20 @@
 #!/bin/bash
 export XDG_CONFIG_HOME="$HOME"/.config
-export TERM=xterm
 mkdir -p "$XDG_CONFIG_HOME"
 echo "setup script started!"
 
 dotfiles=(
-nvim
+  nvim
+  nixpkgs
 )
 
-for package in "${dotfiles[@]}";
-do
+for package in "${dotfiles[@]}"; do
   if [ ! -d "$XDG_CONFIG_HOME"/"$package" ]; then
-    echo "found $package..."
+    echo "installing $package..."
     cp -r $package "$XDG_CONFIG_HOME"/"$package"
   else
     echo "$package already has a dotfile directory"
   fi
 done
+
+nix-env -iA nixpkgs.myPackages
