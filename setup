@@ -17,6 +17,5 @@ for package in "${dotfiles[@]}"; do
   fi
 done
 
-ni-env -iA nixpkgs.myPackages
-touch test.txt
-exho "test"
+nix-env -iA nixpkgs.myPackages
+echo "test"
