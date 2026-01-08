@@ -10,7 +10,7 @@ dotfiles=(
 
 for package in "${dotfiles[@]}"; do
   if [ ! -d "$XDG_CONFIG_HOME"/"$package" ]; then
-    echo "installing $package..."
+    echo "(setup script:) installing $package..."
     cp -r $package "$XDG_CONFIG_HOME"/"$package"
   else
     echo "$package already has a dotfile directory"
@@ -18,3 +18,4 @@ for package in "${dotfiles[@]}"; do
 done
 
 nix-env -iA nixpkgs.myPackages
+touch test.txt
