@@ -8,7 +8,6 @@
         ripgrep
         luarocks-nix
         trashy
-        mason
       ];
     };
   };
