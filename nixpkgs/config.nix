@@ -1,14 +1,15 @@
 {
-  packageOverrides =
-    pkgs: with pkgs; {
-      myPackages = pkgs.buildEnv {
-        name = "my-packages";
-        paths = [
-          coreutils
-          gdb
-          nix
-	        neovim
-        ];
-      };
+  packageOverrides = pkgs: with pkgs; {
+    myPackages = pkgs.buildEnv {
+      name = "my-packages";
+      paths = [
+        neovim
+        fd
+        ripgrep
+        luarocks-nix
+        trashy
+        mason
+      ];
     };
+  };
 }
