@@ -4,6 +4,7 @@
       name = "NiklasNixPackages";
       paths = [
         neovim
+        kitty
         fd
         ripgrep
         luarocks-nix
