@@ -5,10 +5,15 @@
       paths = [
         neovim
         kitty
+        tmux
         fd
         ripgrep
         luarocks-nix
         trashy
+      ];
+      extraOutputsToInstall = [
+      "man"
+      "doc"
       ];
     };
   };
