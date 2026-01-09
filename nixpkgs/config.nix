@@ -4,11 +4,11 @@
       name = "NiklasNixPackages";
       paths = [
         neovim
+        tmux
         fd
         ripgrep
         luarocks-nix
         trashy
-        kitty
       ];
     };
   };
