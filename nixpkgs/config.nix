@@ -5,6 +5,7 @@
       paths = [
         neovim
         tmux
+        kitty
         fd
         ripgrep
         luarocks-nix
