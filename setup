@@ -3,23 +3,25 @@ export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"
 echo "setup script started!"
 
-git clone https://github.com/tmux-plugins/tpm "$XDG_CONFIG_HOME"/tmux/plugins/tpm
-
 dotfiles=(
-  nvim
-  nixpkgs
-  tmux
+	nvim
+	nixpkgs
+	tmux
 )
 
 for package in "${dotfiles[@]}"; do
-  if [ ! -d "$XDG_CONFIG_HOME"/"$package" ]; then
-    echo "(setup script:) installing $package dotfiles..."
-    cp -r $package "$XDG_CONFIG_HOME"/"$package"
-  else
-    echo "$package already has a dotfile directory"
-  fi
+	if [ ! -d "$XDG_CONFIG_HOME"/"$package" ]; then
+		echo "(setup script:) installing $package dotfiles..."
+		cp -r $package "$XDG_CONFIG_HOME"/"$package"
+	else
+		echo "$package already has a dotfile directory"
+	fi
 done
 
+# setup tpm
+git clone https://github.com/tmux-plugins/tpm "$XDG_CONFIG_HOME"/tmux/plugins/tpm
+
+# symlinks
 ln -sf "$PWD/.bashrc" "$HOME"/.bashrc
 
 # install packages from nixpkgs/config.nix
