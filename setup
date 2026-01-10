@@ -6,6 +6,7 @@ echo "setup script started!"
 dotfiles=(
   nvim
   nixpkgs
+  tmux
 )
 
 for package in "${dotfiles[@]}"; do
@@ -21,4 +22,3 @@ ln -sf "$PWD/.bashrc" "$HOME"/.bashrc
 
 # install packages from nixpkgs/config.nix
 nix-env -iA nixpkgs.myPackages
-echo "test"
