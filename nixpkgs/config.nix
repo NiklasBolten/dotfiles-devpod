@@ -4,7 +4,6 @@
       name = "NiklasNixPackages";
       paths = [
         neovim
-        kitty
         tmux
         fd
         ripgrep
