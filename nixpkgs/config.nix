@@ -11,10 +11,6 @@
         luarocks-nix
         trashy
       ];
-      extraOutputsToInstall = [
-      "man"
-      "doc"
-      ];
     };
   };
 }
