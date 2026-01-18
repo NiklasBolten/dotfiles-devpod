@@ -24,7 +24,7 @@ done
 # symlinks
 ln -sf "$PWD/.bashrc" "$HOME"/.bashrc
 ln -sf "$PWD/.bash_aliases" "$HOME"/.bash_aliases
-ln -sf "$PWD/.terminfo/" "$HOME"/.terminfo/
+ln -sf "$PWD/.terminfo/" "$HOME"/.terminfo
 
 # install packages from nixpkgs/config.nix
 nix-env -iA nixpkgs.myPackages
